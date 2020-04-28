@@ -36,5 +36,13 @@ class TasksViewController: UIViewController,UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func addButtonTapped(_ sender: UIBarButtonItem) {
+        
+        let alertController = UIAlertController(title: "New task", message: "Add new task", preferredStyle: .alert)
+        alertController.addTextField()
+        alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: { _ in
+            guard let textField = alertController.textFields?.first, textField.text != "" else { return }
+        }))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
     }
 }

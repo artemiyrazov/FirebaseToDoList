@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31BFA3D9136C2F62BC09EF2D /* Pods_FirebaseToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2E89B9DC7A0A37492990ABB /* Pods_FirebaseToDoList.framework */; };
+		BA7325982458822600730CAC /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7325972458822600730CAC /* Task.swift */; };
+		BA73259A2458822D00730CAC /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA7325992458822D00730CAC /* User.swift */; };
 		BAEC9CC32455A53000FEB767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC9CC22455A53000FEB767 /* AppDelegate.swift */; };
 		BAEC9CC52455A53000FEB767 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC9CC42455A53000FEB767 /* SceneDelegate.swift */; };
 		BAEC9CC72455A53000FEB767 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEC9CC62455A53000FEB767 /* LoginViewController.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		4F1F34E6FE914C298CEF7199 /* Pods-FirebaseToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseToDoList.release.xcconfig"; path = "Target Support Files/Pods-FirebaseToDoList/Pods-FirebaseToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		BA7325972458822600730CAC /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		BA7325992458822D00730CAC /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BAEC9CBF2455A53000FEB767 /* FirebaseToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEC9CC22455A53000FEB767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAEC9CC42455A53000FEB767 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		BAEC9CDB2455B36100FEB767 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BA7325972458822600730CAC /* Task.swift */,
+				BA7325992458822D00730CAC /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -255,6 +261,8 @@
 			files = (
 				BAEC9CC72455A53000FEB767 /* LoginViewController.swift in Sources */,
 				BAEC9CD72455B31600FEB767 /* TasksViewController.swift in Sources */,
+				BA73259A2458822D00730CAC /* User.swift in Sources */,
+				BA7325982458822600730CAC /* Task.swift in Sources */,
 				BAEC9CC32455A53000FEB767 /* AppDelegate.swift in Sources */,
 				BAEC9CC52455A53000FEB767 /* SceneDelegate.swift in Sources */,
 			);

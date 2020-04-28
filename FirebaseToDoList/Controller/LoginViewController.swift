@@ -82,6 +82,7 @@ class LoginViewController: UIViewController {
                 self?.createAlert(title: "Error", message: error!.localizedDescription)
                 return
             }
+            self?.clearAllFields()
         }
     }
     
