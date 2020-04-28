@@ -9,14 +9,20 @@ import Firebase
 class LoginViewController: UIViewController {
     
     let segueIdentifier = "loginSegue"
+    var ref: DatabaseReference!
     
     @IBOutlet weak var signInButton: UIButton!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    // MARK: - ViewController lifecycle methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference(withPath: "users")
+        
         signInButton.layer.cornerRadius = 15
         
         // Keyboard settings
@@ -41,6 +47,8 @@ class LoginViewController: UIViewController {
         }
     }
     
+    //MARK: - Custom methods
+    
     func clearAllFields() {
         emailTextField.text = ""
         passwordTextField.text = ""
@@ -52,6 +60,8 @@ class LoginViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    
+    //MARK: - @IBactions methods
     
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         guard   let email = emailTextField.text, let password = passwordTextField.text, email != "", password != "" else {
@@ -82,11 +92,14 @@ class LoginViewController: UIViewController {
                 self?.createAlert(title: "Error", message: error!.localizedDescription)
                 return
             }
+            let userRef = self?.ref.child((user?.user.uid)!)
+            userRef?.setValue(["email": user?.user.email])
             self?.clearAllFields()
         }
     }
     
-    // deinit Notifications
+//MARK: - Deinitialization
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -94,7 +107,8 @@ class LoginViewController: UIViewController {
     }
 }
 
-// MARK: - Work with keyboard dismiss
+
+// MARK: - Extension for keyboard dismissing
 extension LoginViewController: UITextFieldDelegate { 
     
     // Move screen while editing textFields

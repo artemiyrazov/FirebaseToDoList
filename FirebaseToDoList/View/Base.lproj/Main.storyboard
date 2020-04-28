@@ -130,7 +130,7 @@
                                 <color key="backgroundColor" name="CustomBackgroundColor"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="mid-jN-h1o">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="mid-jN-h1o">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mid-jN-h1o" id="omP-G5-dgt">
@@ -144,12 +144,17 @@
                                     <outlet property="delegate" destination="tXu-e7-Yim" id="lz5-Ns-h0c"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="goU-bL-Iny">
+                                <rect key="frame" x="169" y="414.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="goU-bL-Iny" firstAttribute="centerY" secondItem="ncD-5a-sAi" secondAttribute="centerY" id="3kj-k8-ikN"/>
                             <constraint firstAttribute="bottom" secondItem="PeV-T5-WFt" secondAttribute="bottom" id="Dpz-jr-3oE"/>
                             <constraint firstItem="PeV-T5-WFt" firstAttribute="leading" secondItem="ncD-5a-sAi" secondAttribute="leading" id="M4p-Vu-B0B"/>
                             <constraint firstItem="PeV-T5-WFt" firstAttribute="top" secondItem="ncD-5a-sAi" secondAttribute="top" id="TbJ-hx-2Ls"/>
+                            <constraint firstItem="goU-bL-Iny" firstAttribute="centerX" secondItem="ncD-5a-sAi" secondAttribute="centerX" id="ZXi-3K-5yd"/>
                             <constraint firstItem="PeV-T5-WFt" firstAttribute="trailing" secondItem="ncD-5a-sAi" secondAttribute="trailing" id="smc-6p-1M6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ncD-5a-sAi"/>
@@ -169,6 +174,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="goU-bL-Iny" id="Pox-F4-SFi"/>
                         <outlet property="tableView" destination="PeV-T5-WFt" id="Oz5-iB-oGP"/>
                     </connections>
                 </viewController>
