@@ -65,11 +65,12 @@ class TasksViewController: UIViewController,UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.backgroundColor = .clear
+        
         let task = tasks[indexPath.row]
         let isCompleted = task.completed
-        let taskTitle = tasks[indexPath.row].title
-        cell.textLabel?.text = taskTitle
+        let taskTitle = task .title
         
+        cell.textLabel?.text = taskTitle
         toggleCompletion(cell, isCompleted: isCompleted)
         
         return cell
